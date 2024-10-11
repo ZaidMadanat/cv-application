@@ -2,10 +2,10 @@ import { useState } from "react";
 
 function GeneralInfo() { 
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        location: "",
+        name: "Zaid",
+        email: "zaidmadanat@gmail.com",
+        phone: "4089972356",
+        location: "San Jose, CA",
     });
 
     const handleChange = (e) => {
