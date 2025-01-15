@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function GeneralInfo({formData, setFormData}) { 
     const handleChange = (e) => {
         const { name, value } = e.target; 

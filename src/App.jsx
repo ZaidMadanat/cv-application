@@ -1,9 +1,17 @@
 import './styles/app.css';
+import example from './Example.jsx';
+import {useState} from "react";
+
+// Form Components
 import GeneralInfo from './components/info.jsx';
 import JobInfo from './components/job.jsx';
 import EducationInfo from './components/education.jsx';
-import example from './Example.jsx';
+
+
+// Display Components
 import DisplayInfo from "./components/DisplayInfo.jsx"
+import DisplayJob from "./components/DisplayJob.jsx"
+import DisplayEducation from './components/DisplayEducation.jsx';
 
 
 
@@ -42,7 +50,7 @@ function App() {
       <div className='display'>
          <DisplayInfo formData={GeneralData}/>
          <DisplayJob formData={JobData}/>
-         <EducationInfo formData={EducationData}/>
+         <DisplayEducation formData={EducationData}/>
       </div>
        
     </div> 
