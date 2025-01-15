@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function GeneralInfo() { 
+function GeneralInfo({formData, setFormData}) { 
     const handleChange = (e) => {
         const { name, value } = e.target; 
         setFormData({ 

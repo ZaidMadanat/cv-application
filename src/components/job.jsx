@@ -1,25 +1,17 @@
 import { useState } from 'react';
 
-function JobInfo() { 
-    const [jobData, setJobData] = useState({ 
-        companyName: "Google",
-        positionName: "Software Developer",
-        startDate: "11/11/2020",
-        endDate: "Current",
-        description: "Developer",
-    });
+function JobInfo({formData, setFormData}) { 
 
     const handleChange = (e) => { 
         const { name, value } = e.target; 
-        setJobData({ 
-            ...jobData, 
+        setFormData({ 
+            ...formData, 
             [name]: value
         });        
     };
 
     const handleSubmit = (e) => { 
         e.preventDefault(); 
-        localStorage.setItem("jobData", JSON.stringify(jobData)); 
     };
 
     return ( 
