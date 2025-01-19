@@ -1,41 +1,15 @@
-#root { 
+
+* { 
+    margin: 0; 
+    padding: 0;
+}
+
+/* Main div ID for CV */
+#main { 
     height: 100%; 
     width: 100%;
-}
-#main {
-    background-color: #e2e8f0;
-    margin: 0;
-    padding: 0;  
     display: flex; 
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
+    flex-direction: row;
+    gap: 5%; 
 
-.edits { 
-    display: flex; 
-    flex-direction: column;
-    height:100vh; 
-    max-width: 50%;
-    flex-grow: 1;
-}
-.section { 
-    display: flex; 
-    flex-direction: column;
-    gap: 7px; 
-    width: 50%;
-}
-.FormInfo { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 3px;
-}
-
-hr { 
-    width: 100%; 
-    size: 5px;
-}
-vl { 
-    height: 100vh;
-    size: 2px; 
 }

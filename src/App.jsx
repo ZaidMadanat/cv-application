@@ -1,4 +1,5 @@
 import './styles/app.css';
+import './styles/form.css';
 import example from './Example.jsx';
 import {useState} from "react";
 
