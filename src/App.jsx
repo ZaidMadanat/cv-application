@@ -5,14 +5,14 @@ import {useState} from "react";
 
 // Form Components
 import GeneralInfo from './components/info.jsx';
-import JobInfo from './components/job.jsx';
-import EducationInfo from './components/education.jsx';
+import JobInfo from './components/Job/job.jsx';
+import EducationInfo from './components/Education/education.jsx';
 
 
 // Display Components
 import DisplayInfo from "./components/DisplayInfo.jsx"
-import DisplayJob from "./components/DisplayJob.jsx"
-import DisplayEducation from './components/DisplayEducation.jsx';
+import DisplayJob from "./components/Job/DisplayJob.jsx"
+import DisplayEducation from './components/Education/DisplayEducation.jsx';
 
 
 
@@ -22,15 +22,25 @@ function App() {
   const [GeneralData, setGeneralData] = useState(example.general); 
   const [EducationData, setEducationData] = useState(example.education);
   const [JobData, setJobData] = useState(example.job);
- 
- 
- 
+
+  const educationItems = EducationData.map((school, index) => (
+    <EducationInfo
+      key={index} 
+      formData={school} 
+      setFormData={(updatedData) => {
+        setEducationData((prevData) =>
+          prevData.map((entry, i) => (i === index ? updatedData : entry))
+        );
+      }}/>
+  ));
+  
+
   return ( 
     <div id='main'>
       <div className='edits'> 
         <div className='Section' id='1'>
           <h1>General Information</h1>
-          <GeneralInfo formData={GeneralData} setFormData={setGeneralData}/>
+          <GeneralInfo formData={GeneralData} setFormData={setGeneralData}/> 
           <hr />
         </div>
 
@@ -42,11 +52,10 @@ function App() {
 
         <div className='Section' id='3'> 
           <h1>Education</h1>
-          <EducationInfo formData={EducationData} setFormData={setEducationData}/>
+          {educationItems}
           <hr />
         </div>
       </div>
-
   
       <div className='display'>
          <DisplayInfo formData={GeneralData}/>

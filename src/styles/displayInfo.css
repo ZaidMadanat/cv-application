@@ -1,0 +1,34 @@
+.displayInfo { 
+    display: flex;
+    flex-direction: row;
+}
+h4 { 
+    align-items: left;
+    text-align: left;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+}
+
+.Contact { 
+    padding: 0; 
+    margin: 0;
+    margin-left: 0.5rem;
+}
+.Contact li { 
+    list-style-type: none;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+
+ul { 
+    list-style-type: none;
+    display: flex; 
+    flex-direction: row;
+    gap: 15%;
+}
+.icon { 
+    margin-right: 4px; 
+    width: 16px; 
+    height: 16px; 
+}
