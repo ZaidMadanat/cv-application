@@ -12,7 +12,6 @@ function EducationForm(formData, handleChange) {
             <input type="text" name="major" value={formData.major} onChange={handleChange} placeholder="Enter Major"/>
             <input type="text" name="gradStart" value={formData.gradStart} onChange={handleChange} placeholder="Enter your graduation start date" />
             <input type="text" name="gradEnd" value={formData.gradEnd} onChange={handleChange} placeholder="Enter your graduation end date"/>
-            <button type="submit">Submit</button>
         </form>
     );
 }

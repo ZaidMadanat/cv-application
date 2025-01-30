@@ -10,10 +10,9 @@ import EducationInfo from './components/Education/education.jsx';
 
 
 // Display Components
-import DisplayInfo from "./components/DisplayInfo.jsx"
-import DisplayJob from "./components/Job/DisplayJob.jsx"
+import DisplayInfo from "./components/DisplayInfo.jsx";
+import DisplayJob from "./components/Job/DisplayJob.jsx";
 import DisplayEducation from './components/Education/DisplayEducation.jsx';
-
 
 
 function App() {
@@ -33,7 +32,17 @@ function App() {
         );
       }}/>
   ));
+
+  const addEducation = () => {
+    const newEntry = {
+      uniName: "",
+      major: "",
+      gradStart: "",
+      gradEnd: "",
+    };
   
+    setEducationData((prevData) => [...prevData, newEntry]);
+  };
 
   return ( 
     <div id='main'>
@@ -42,6 +51,7 @@ function App() {
           <h1>General Information</h1>
           <GeneralInfo formData={GeneralData} setFormData={setGeneralData}/> 
           <hr />
+
         </div>
 
         <div className='Section' id='2'> 
@@ -53,6 +63,7 @@ function App() {
         <div className='Section' id='3'> 
           <h1>Education</h1>
           {educationItems}
+          <button onClick={addEducation}>Add</button>
           <hr />
         </div>
       </div>
