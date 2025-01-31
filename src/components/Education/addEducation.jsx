@@ -1,7 +1,4 @@
-// imports 
 import {v4 as uuidv4} from 'uuid'; 
-import EducationForm from './educationForm';
-import handleChange from './UpdateEducation';
 
 /*
 Adds a new educational school and updates the SetFormData array 

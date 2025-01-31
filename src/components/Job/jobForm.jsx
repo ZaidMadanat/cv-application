@@ -1,14 +1,4 @@
-import { useState } from 'react';
-
-function JobInfo({formData, setFormData}) { 
-
-    const handleChange = (e) => { 
-        const { name, value } = e.target; 
-        setFormData({ 
-            ...formData, 
-            [name]: value
-        });        
-    };
+function JobForm({formData, handleChange}) { 
 
     const handleSubmit = (e) => { 
         e.preventDefault(); 
@@ -21,9 +11,8 @@ function JobInfo({formData, setFormData}) {
             <input type="text" name="startDate" value={formData.startDate} onChange={handleChange} placeholder="Start Date" />
             <input type="text" name="endDate" value={formData.endDate} onChange={handleChange} placeholder="End Date" />
             <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description"></textarea>
-            <button type="submit">Submit</button>
         </form>
     );
 }
 
-export default JobInfo;
+export default JobForm;

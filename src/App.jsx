@@ -7,16 +7,17 @@ import {v4 as uuidv4} from 'uuid';
 
 // Form Components
 import GeneralInfo from './components/info.jsx';
-import JobInfo from './components/Job/job.jsx';
+import JobForm from './components/Job/jobForm.jsx';
+import addJob from './components/Job/addJob.jsx';
 import addEducation from './components/Education/addEducation.jsx';
 import EducationForm from './components/Education/educationForm.jsx';
+import handleChange from './components/handleChange.jsx';
 
 
 // Display Components 
 import DisplayInfo from "./components/DisplayInfo.jsx";
 import DisplayJob from "./components/Job/DisplayJob.jsx";
 import DisplayEducation from './components/Education/DisplayEducation.jsx';
-
 
 function App() {
   
@@ -25,7 +26,9 @@ function App() {
   const [EducationData, setEducationData] = useState([
     {id: uuidv4(), uniName: "Stanford University", major: "CS", gradStart: "2016", gradEnd: "2020" }
   ]);
-  const [JobData, setJobData] = useState(example.job);
+  const [JobData, setJobData] = useState([
+    {id: uuidv4(4), companyName: "Google", positionName: "Junior Software Engineer", startDate: "11/11/2020", endDate: "12/12/2022", description: "developer"}
+  ]);
 
 
 
@@ -40,26 +43,28 @@ function App() {
 
         <div className='Section' id='2'> 
           <h1>Job Experience</h1>
-          <JobInfo formData={JobData} setFormData={setJobData}/>
+          {JobData.map((job) => 
+            <JobForm 
+              key={job.id}
+              formData={job}
+              handleChange={(e) => handleChange(setJobData, job.id, e)}
+            />
+          )}
+          <button className='add' onClick={() => addJob(setJobData)}>Add</button>
+
+
           <hr /> 
         </div>
 
         <div className='Section' id='3'> 
           <h1>Education</h1>
-          {EducationData.map((school =>           
-            <EducationForm  
+          {EducationData.map((school) => 
+            <EducationForm 
               key={school.id}
               formData={school}
-              handleChange={(e) => { 
-                const {name, value} = e.target; 
-                setEducationData((prevData) => 
-                  prevData.map((entry) => 
-                    entry.id === school.id ? {...entry, [name]: value} : entry
-                  )  
-              );
-              }}
+              handleChange={(e) => handleChange(setEducationData, school.id, e)}
             />
-          ))}
+          )}
 
           <button className='add' onClick={() => addEducation(setEducationData)}>Add</button>
           <hr />

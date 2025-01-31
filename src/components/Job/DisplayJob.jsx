@@ -1,12 +1,15 @@
 function DisplayJob({formData}) { 
     return (
         <div className="DisplayJob">
-          <h2>Your Information</h2>
-          <p><strong>Company:</strong> {formData.companyName}</p>
-          <p><strong>Position:</strong> {formData.positionName}</p>
-          <p><strong>Start Date:</strong> {formData.startDate}</p>
-          <p><strong>End Date:</strong> {formData.endDate}</p>
-          <p><strong>Description:</strong> {formData.description}</p>
+          {formData.map((school) => 
+            <div>          
+              <p><strong>Company:</strong> {school.companyName}</p>
+              <p><strong>Position:</strong> {school.positionName}</p>
+              <p><strong>Start Date:</strong> {school.startDate}</p>
+              <p><strong>End Date:</strong> {school.endDate}</p>
+              <p><strong>Description:</strong> {school.description}</p>
+            </div>
+          )}
         </div>
     );
 }
