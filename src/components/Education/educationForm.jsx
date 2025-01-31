@@ -2,7 +2,7 @@
 /*
 Display the education Form on the Left Hand Side of the CV application. 
 */
-function EducationForm(formData, handleChange) {
+function EducationForm({formData, handleChange}) {
     const handleSubmit = (e) => { 
         e.preventDefault(); 
     };
