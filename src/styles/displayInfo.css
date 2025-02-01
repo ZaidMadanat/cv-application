@@ -2,14 +2,16 @@
 .displays {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex-grow: 1;
+    width: 60%; 
     height: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #cbd5e1;
+    border: 1px #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 10px auto;
+    padding: 20px;
+    margin: 0; 
+    max-width: 60vw;
 }
 
 /* Name (Top of Resume) */
@@ -25,14 +27,15 @@
     text-align: center;
     font-size: 1rem;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .resume-contact ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
     padding: 0;
 }
 
@@ -44,20 +47,23 @@
 
 /* Job Experience Section */
 .resume-section {
-    margin-bottom: 20px;
+    flex-grow: 1;
+    margin-bottom: 30px;
     width:100%; 
     background: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 4px;
+    margin-top: 20px;
 }
 
 .resume-section h2 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 2px solid lightblue;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 /* Job Entry */
@@ -65,8 +71,7 @@
     margin-bottom: 25px;
     padding: 15px;
     background: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    flex-grow: 1;
 }
 
 .job-entry h3 {
@@ -98,8 +103,7 @@
     margin-bottom: 25px;
     padding: 15px;
     background: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    flex-grow: 1;
 }
 
 .education-entry h3 {

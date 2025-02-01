@@ -1,5 +1,6 @@
 import './styles/app.css';
 import './styles/form.css';
+import './styles/displayInfo.css'
 import example from './Example.jsx';
 import {useState} from "react";
 import {v4 as uuidv4} from 'uuid'; 
@@ -22,7 +23,7 @@ function App() {
   // Create States for each Data Entry, examples folder has p
   const [GeneralData, setGeneralData] = useState(example.general); 
   const [EducationData, setEducationData] = useState([
-    {id: uuidv4(), uniName: "Stanford University", major: "CS", gradStart: "2016", gradEnd: "2020" }
+    {id: uuidv4(), uniName: "Stanford University", major: "BS, Computer Science", gradStart: "2016", gradEnd: "2020" }
   ]);
   const [JobData, setJobData] = useState([
     {id: uuidv4(4), companyName: "Google", positionName: "Junior Software Engineer", startDate: "2020", endDate: "2022", description: "developer"}
@@ -49,8 +50,6 @@ function App() {
             />
           )}
           <button className='add' onClick={() => addJob(setJobData)}>Add</button>
-
-
           <hr /> 
         </div>
 
@@ -63,13 +62,10 @@ function App() {
               handleChange={(e) => handleChange(setEducationData, school.id, e)}
             />
           )}
-
           <button className='add' onClick={() => addEducation(setEducationData)}>Add</button>
           <hr />
         </div>
       </div>
-  
-      <div className='display'>
         <DisplayInfo 
           formData={{ 
             name: GeneralData.name,
@@ -79,9 +75,7 @@ function App() {
             jobData: JobData, 
             educationData: EducationData
           }}
-          />
-      </div>
-       
+        />    
     </div> 
   )
 }
