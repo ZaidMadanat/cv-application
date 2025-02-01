@@ -16,18 +16,16 @@ import handleChange from './components/handleChange.jsx';
 
 // Display Components 
 import DisplayInfo from "./components/DisplayInfo.jsx";
-import DisplayJob from "./components/Job/DisplayJob.jsx";
-import DisplayEducation from './components/Education/DisplayEducation.jsx';
 
 function App() {
   
-  // Create States for each Data Entry, using the examples folder to put placeholder data. 
+  // Create States for each Data Entry, examples folder has p
   const [GeneralData, setGeneralData] = useState(example.general); 
   const [EducationData, setEducationData] = useState([
     {id: uuidv4(), uniName: "Stanford University", major: "CS", gradStart: "2016", gradEnd: "2020" }
   ]);
   const [JobData, setJobData] = useState([
-    {id: uuidv4(4), companyName: "Google", positionName: "Junior Software Engineer", startDate: "11/11/2020", endDate: "12/12/2022", description: "developer"}
+    {id: uuidv4(4), companyName: "Google", positionName: "Junior Software Engineer", startDate: "2020", endDate: "2022", description: "developer"}
   ]);
 
 
@@ -72,9 +70,16 @@ function App() {
       </div>
   
       <div className='display'>
-         <DisplayInfo formData={GeneralData}/>
-         <DisplayJob formData={JobData}/>
-         <DisplayEducation formData={EducationData}/>
+        <DisplayInfo 
+          formData={{ 
+            name: GeneralData.name,
+            email: GeneralData.email,
+            phone: GeneralData.phone, 
+            location: GeneralData.location, 
+            jobData: JobData, 
+            educationData: EducationData
+          }}
+          />
       </div>
        
     </div> 

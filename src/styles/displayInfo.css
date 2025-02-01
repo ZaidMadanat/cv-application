@@ -1,34 +1,147 @@
-.displayInfo { 
+/* Resume Container */
+.displays {
     display: flex;
-    flex-direction: row;
-}
-h4 { 
-    align-items: left;
-    text-align: left;
-    font-size: 2rem;
-    margin-left: 0.5rem;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 10px auto;
 }
 
-.Contact { 
-    padding: 0; 
-    margin: 0;
-    margin-left: 0.5rem;
-}
-.Contact li { 
-    list-style-type: none;
-    align-items: center; 
-    justify-content: center;
+/* Name (Top of Resume) */
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 5px;
 }
 
-ul { 
-    list-style-type: none;
-    display: flex; 
-    flex-direction: row;
-    gap: 15%;
+/* Contact Info Section */
+.resume-contact {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
 }
-.icon { 
-    margin-right: 4px; 
-    width: 16px; 
-    height: 16px; 
+
+.resume-contact ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.resume-contact li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Job Experience Section */
+.resume-section {
+    margin-bottom: 20px;
+    width:100%; 
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.resume-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Job Entry */
+.job-entry {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.job-entry h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.job-entry .job-title {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.job-entry .job-dates {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.job-entry .job-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+/* Education Section */
+.education-entry {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.education-entry h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.education-entry .degree {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.education-entry .edu-dates {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Spacing Between New Job/Education Entries */
+.job-entry:not(:first-child),
+.education-entry:not(:first-child) {
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .display {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .resume-name {
+        font-size: 2rem;
+    }
+
+    .resume-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .job-entry,
+    .education-entry {
+        padding: 10px;
+    }
 }

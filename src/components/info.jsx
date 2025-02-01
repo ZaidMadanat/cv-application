@@ -17,7 +17,6 @@ function GeneralInfo({formData, setFormData}) {
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter Degree"/>
             <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter Phone Number" />
             <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Enter your location" />
-            <button type="submit">Submit</button>
         </form>
     );
 }
